@@ -1,24 +1,21 @@
-# README
+# SHORTERY
+Simple URL shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[DEMO](https://shortery.herokuapp.com/urls)
 
-Things you may want to cover:
+### Keypoints
+- Checks number of times the URL has been visited
+- Creates logs per access
+- Returns location and accessed on of the visitor
 
-* Ruby version
+### What
 
-* System dependencies
+### Screenshot
+URL index with shortened URL
+<img width="1202" alt="screenshot 2017-01-06 01 25 07" src="https://cloud.githubusercontent.com/assets/2100728/21690379/fae3cb9a-d3ae-11e6-8db5-b1a629f761fe.png">
 
-* Configuration
+Creating Shortened URL
+<img width="1200" alt="screenshot 2017-01-06 01 28 38" src="https://cloud.githubusercontent.com/assets/2100728/21690490/79aae79c-d3af-11e6-82ee-70815bcf7399.png">
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+URL Logs
+<img width="1170" alt="screenshot 2017-01-06 01 27 39" src="https://cloud.githubusercontent.com/assets/2100728/21690464/545ffd60-d3af-11e6-80ef-54afd1f97ca1.png">
