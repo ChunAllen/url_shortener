@@ -12,11 +12,10 @@ html
 
     body
 
-        .container
+      .container
 
-						= yield
+        = yield
 
-						= render partial: 'modal'
-
+        = render partial: 'modal'
 
     = javascript_include_tag :application, 'data-turbolinks-track': true

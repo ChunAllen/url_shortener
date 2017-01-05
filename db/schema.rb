@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104231059) do
+ActiveRecord::Schema.define(version: 20170105053139) do
+
+  create_table "logs", force: :cascade do |t|
+    t.integer  "url_id",     null: false
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url_id"], name: "index_logs_on_url_id"
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer  "url_id",      null: false
+    t.datetime "accessed_at"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["url_id"], name: "index_records_on_url_id"
+  end
 
   create_table "urls", force: :cascade do |t|
     t.string   "given_url"

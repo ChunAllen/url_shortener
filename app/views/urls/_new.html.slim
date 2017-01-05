@@ -4,14 +4,14 @@
 
 = simple_form_for @url, as: :url, url: urls_path, remote: true do |form|
 
-	.modal-body
+  .modal-body
 
-		= form.input :given_url
+    = form.input :given_url
 
-	hr
+  hr
 
-	.modal-footer
+  .modal-footer
 
-		= link_to 'Cancel', '#', class: 'btn btn-default pull-left', data: { dismiss: 'modal' }
-		= form.button :submit, 'Shorten URL', class: 'btn btn-primary'
+    = link_to 'Cancel', '#', class: 'btn btn-default pull-left', data: { dismiss: 'modal' }
+    = form.button :submit, 'Shorten URL', class: 'btn btn-primary'
 
