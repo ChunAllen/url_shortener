@@ -12,23 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20170105053139) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "logs", force: :cascade do |t|
     t.integer  "url_id",     null: false
     t.decimal  "latitude"
     t.decimal  "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["url_id"], name: "index_logs_on_url_id"
-  end
-
-  create_table "records", force: :cascade do |t|
-    t.integer  "url_id",      null: false
-    t.datetime "accessed_at"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["url_id"], name: "index_records_on_url_id"
+    t.index ["url_id"], name: "index_logs_on_url_id", using: :btree
   end
 
   create_table "urls", force: :cascade do |t|
