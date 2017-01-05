@@ -23,7 +23,7 @@ class UrlsController < ApplicationController
   def show; end
 
   def redirect
-    @service = UrlParser.new(@url, request.location)
+    @service = UrlParserService.new(@url, request.location)
     redirect_to @url.given_url if @service.run
   end
 

@@ -1,4 +1,4 @@
-class UrlParser < BaseService
+class UrlParserService < BaseService
 
   attr_reader :url, :location
 
