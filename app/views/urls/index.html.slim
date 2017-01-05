@@ -17,7 +17,7 @@ h1 URL Shortener
         tr
           th Given URL
           th Shortened URL
-          th Clicks
+          th No. of Clicks
           th
 
       tbody
@@ -26,3 +26,4 @@ h1 URL Shortener
             td = url.given_url
             td = url.shortened_url
             td = url.clicks
+            td = link_to 'Show Logs', url_path(url), class: 'btn btn-default'

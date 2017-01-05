@@ -1,0 +1,27 @@
+h1 Logs for #{@url.given_url}
+
+.panel.panel-default
+
+  .panel-heading
+    .row
+      .col-md-6
+        h3 #{@url.shortened_url}
+
+      .col-md-6
+        = link_to 'Back', urls_path, class: 'btn btn-primary pull-right'
+
+  .panel-body
+
+    table.table.table-default
+
+      thead
+        tr
+          th Location
+          th Accessed On
+          th
+
+      tbody
+        - LogDecorator.wrap_all(@url.logs).each do |log|
+          tr
+            td = log.address
+            td = log.accessed_on

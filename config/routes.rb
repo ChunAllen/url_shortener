@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :urls, only: [:index, :new, :create, :show]
 
-	get ':slug' => 'urls#show'
+  get ':slug', to: 'urls#redirect', as: :redirect
 
 end
