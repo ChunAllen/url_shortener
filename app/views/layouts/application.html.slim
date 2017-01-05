@@ -14,8 +14,9 @@ html
 
         .container
 
-            = render partial: 'flash_messages'
+						= yield
 
-            = yield
+						= render partial: 'modal'
+
 
     = javascript_include_tag :application, 'data-turbolinks-track': true

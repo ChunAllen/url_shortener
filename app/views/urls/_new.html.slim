@@ -1,0 +1,17 @@
+.modal-header
+  h2 Shorten URL
+  button.close aria-hidden="true" data-dismiss="modal" type="button" &times;
+
+= simple_form_for @url, as: :form, url: urls_path, remote: true do |form|
+
+	.modal-body
+
+		= form.input :given_url
+
+	hr
+
+	.modal-footer
+
+		= link_to 'Cancel', '#', class: 'btn btn-default pull-left', data: { dismiss: 'modal' }
+		= form.button :submit, 'Shorten URL', class: 'btn btn-primary'
+
