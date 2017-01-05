@@ -1,5 +1,7 @@
 class UrlsController < ApplicationController
 
+	before_action :prepare_url, only: :show
+
   def index
     @urls = UrlDecorator.wrap_all(Url.all)
   end
@@ -17,10 +19,19 @@ class UrlsController < ApplicationController
 		end
 	end
 
+	def show
+		@service = UrlParser.new(@url)
+		redirect_to @url.given_url if @service.run
+	end
+
 	private
 
 	def url_params
 		params.require(:url).permit(:given_url)
+	end
+
+	def prepare_url
+		@url = Url.find_by_slug(params[:slug])
 	end
 
 end

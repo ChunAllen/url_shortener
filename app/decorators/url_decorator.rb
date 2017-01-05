@@ -1,7 +1,11 @@
 class UrlDecorator < BaseDecorator
 
   def shortened_url
-    "#{ENV['BASE_URL']}#{slug}"
+		if Rails.env == 'development'
+			"http://localhost:3000/#{slug}"
+		else
+    	"#{ENV['BASE_URL']}#{slug}"
+		end
   end
 
 end
