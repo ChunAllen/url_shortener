@@ -1,0 +1,28 @@
+h1 Hello
+
+.panel.panel-default
+
+	.panel-heading
+		.row
+			.col-md-6
+				h4 Shortened Links
+					.col-md-6
+						= link_to 'Create New Link', new_url_path, class: 'btn btn-primary pull-right'
+
+		.panel-body
+
+			table.table.table-default
+
+				thead
+					tr
+						th Given URL
+						th Shortened URL
+						th Clicks
+						th
+
+				tbody
+					- @urls.each do |url|
+						tr
+							td = url.given_url
+							td = url.shortened_url
+							td = url.clicks
