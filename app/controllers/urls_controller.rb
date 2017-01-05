@@ -9,7 +9,6 @@ class UrlsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@url = Url.new(url_params)
 		if @url.save
 			flash[:notice] = 'New URL has been shortened'

@@ -2,7 +2,7 @@
   h2 Shorten URL
   button.close aria-hidden="true" data-dismiss="modal" type="button" &times;
 
-= simple_form_for @url, as: :form, url: urls_path, remote: true do |form|
+= simple_form_for @url, as: :url, url: urls_path, remote: true do |form|
 
 	.modal-body
 
