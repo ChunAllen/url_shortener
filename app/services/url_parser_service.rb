@@ -9,7 +9,7 @@ class UrlParserService < BaseService
 
   def run
     url.transaction do
-      Url.increment_counter :clicks, url.id
+      Url.increment_counter(:clicks, url.id)
       url.logs.create!(latitude: location.latitude, longitude: location.longitude)
     end
   end
