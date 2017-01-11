@@ -11,13 +11,13 @@ class Url < ApplicationRecord
 
   private
 
+  # Adds gem Retriable that tries 5 times, if it still fails it will retry after 0.5, 1.0, 2.0, 2.5 seconds
+  # Assigns SecureRandom.uuid version 4 UUID is purely random
   def generate_slug
-    self.slug = SecureRandom.uuid
-    save
+    Retriable.retriable tries: 5, intervals: [0.5, 1.0, 2.0, 2.5] do
+      self.slug = SecureRandom.uuid
+      save
+    end
   end
 
 end
-
-
- #base62 = ['0'..'9','A'..'Z','a'..'z'].map{|a| a.to_a}.flatten
- #base36 = {};['0'..'9','a'..'z'].map { |range| range.to_a }.flatten.each_with_index { |char, position| base36[char] = position} url10 = 0; url62 = "" # convert to base10 url36.reverse.chars.to_a.each_with_index { |c,i| url10 += base36[c] * (36 ** i)} # convert to base62 6.times{|i| url62 &lt;&lt; base62[url10 % 62]; url10 = url10 / 62}

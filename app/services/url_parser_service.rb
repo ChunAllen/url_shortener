@@ -7,6 +7,8 @@ class UrlParserService < BaseService
     @location = location
   end
 
+  # Increments clicks using Atomic Incrementor
+  # http://www.alfreddd.com/2011/01/atomic-increment-in-rails.html
   def run
     url.transaction do
       Url.increment_counter(:clicks, url.id)
