@@ -18,7 +18,7 @@ RSpec.describe UrlParserService, type: :service do
   end
 
   describe '#run' do
-    it { expect { service.run }.to change { url.clicks }.from(0).to(1) }
+    it { expect { service.run }.to change { url.reload.clicks }.from(0).to(1) }
 
     it { expect { service.run }.to change { url.logs.count }.from(0).to(1) }
 

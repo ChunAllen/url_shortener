@@ -24,7 +24,7 @@ class UrlsController < ApplicationController
 
   def redirect
     @service = UrlParserService.new(@url, request.location)
-    redirect_to @url.given_url if @service.run
+    redirect_to @url.formatted_url if @service.run
   end
 
   private
@@ -38,7 +38,7 @@ class UrlsController < ApplicationController
   end
 
   def prepare_slug
-    @url = Url.find_by_slug(params[:slug])
+    @url = UrlDecorator.new(Url.find_by_slug(params[:slug]))
   end
 
 end
