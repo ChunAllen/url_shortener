@@ -1,6 +1,7 @@
 class Url < ApplicationRecord
 
   validates :given_url, presence: true
+  validates :slug, uniqueness: true
 
   after_create :generate_slug
 
